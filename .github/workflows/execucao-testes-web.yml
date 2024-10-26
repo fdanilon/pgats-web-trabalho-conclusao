@@ -10,14 +10,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Instalando yarn
-        run: npm install -g yarn
-
       - name: Instalando dependencias
-        run: yarn
+        run: npm install
 
       - name: Instalando Cypress
-        run: yarn cypress install
+        run: npx cypress install
 
       - name: Testes E2E (end-to-end)
-        run: yarn cypress run
+        run: npx cypress run
