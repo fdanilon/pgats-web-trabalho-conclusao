@@ -1,0 +1,23 @@
+name: 'Execução testes web'
+
+on:
+  workflow_dispatch:
+
+jobs:
+  e2e-tests:
+    runs-on: ['ubuntu-latest']
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalando yarn
+        run: npm install -g yarn
+
+      - name: Instalando dependencias
+        run: yarn
+
+      - name: Instalando Cypress
+        run: yarn cypress install
+
+      - name: Testes E2E (end-to-end)
+        run: yarn cypress run
