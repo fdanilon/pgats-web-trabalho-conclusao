@@ -1,0 +1,4 @@
+evidencias-browserstack/
+log/
+node_modules/
+*.json
